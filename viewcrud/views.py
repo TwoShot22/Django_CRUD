@@ -3,10 +3,10 @@ from django.shortcuts import render
 def welcome(request):
     return render(request, 'viewcrud/index.html')
 
-def create(request):
+def read(request):
     return
 
-def read(request):
+def create(request):
     return
 
 def update(request):
