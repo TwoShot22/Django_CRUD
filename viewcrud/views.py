@@ -29,7 +29,16 @@ def create(request):
         return render(request, 'viewcrud/new.html', {'form':form})
 
 def update(request, pk):
-    return
+    # Get Object I want to Modify
+    blog = get_object_or_404(Blog, pk = pk)
+
+    # Show Input Form which connected to Blog Object
+    form = NewBlog(request.POST, instance=blog)
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+
+    return render(request, 'viewcrud/new.html', {'form':form})
 
 def delete(request, pk):
     blog = get_object_or_404(Blog, pk = pk)
