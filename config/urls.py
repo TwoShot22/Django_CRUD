@@ -8,6 +8,6 @@ import viewcrud.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', viewcrud.views.welcome, name="welcome"),
-    path('funccrud/', include('viewcrud.views')),
-    # path('classcrud/', include('classcrud.views')),
+    path('funccrud/', include('viewcrud.urls')),
+    # path('classcrud/', include('classcrud.urls')),
 ]
