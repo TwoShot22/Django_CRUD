@@ -32,4 +32,6 @@ def update(request, pk):
     return
 
 def delete(request, pk):
-    return
+    blog = get_object_or_404(Blog, pk = pk)
+    blog.delete()
+    return redirect('home')

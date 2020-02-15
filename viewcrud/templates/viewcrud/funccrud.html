@@ -12,7 +12,11 @@
     <!-- Show Blog Content -->
     {% for blog in blogs %}
     <h2>{{blog.title}}</h2>
+    <h5>{{blog.pub_date}}</h5>
     <p>{{blog.body}}</p>
+
+    <a href=""> 수정 </a>
+    <a href="{% url 'delete' blog.id %}"> 삭제 </a>
     <hr>
     {% endfor %}
 </body>
