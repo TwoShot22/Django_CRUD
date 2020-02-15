@@ -6,8 +6,14 @@
     <title>CRUD Project</title>
 </head>
 <body>
-    <h1>CRUD 방식</h1>
-    
-    <a href="{% url 'home' %}">Function Based CRUD</a><br>
+    <form method="POST">
+        {% csrf_token %}
+
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input type="submit" value="제출하기">
+    </form>
 </body>
 </html>

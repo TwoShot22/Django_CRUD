@@ -6,6 +6,10 @@
     <title>CRUD Project</title>
 </head>
 <body>
+    <!-- Create New Blog Content -->
+    <a href="{% url 'newblog' %}">글쓰기</a>
+
+    <!-- Show Blog Content -->
     {% for blog in blogs %}
     <h2>{{blog.title}}</h2>
     <p>{{blog.body}}</p>

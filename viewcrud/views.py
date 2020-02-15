@@ -11,7 +11,22 @@ def read(request):
     return render(request, 'viewcrud/funccrud.html', {'blogs':blogs})
 
 def create(request):
-    return
+    # Save New Data to Blog == POST
+    if request.method == 'POST':
+        form = NewBlog(request.POST)
+
+        # Allow Save
+        if form.is_valid:
+            post = form.save(commit=False)
+            post.pub_date = timezone.now()
+            post.save()
+            return redirect('home')
+
+    # Show 'newblog' page == GET
+    else:
+        # Show Form for Enter Content
+        form = NewBlog()
+        return render(request, 'viewcrud/new.html', {'form':form})
 
 def update(request, pk):
     return
