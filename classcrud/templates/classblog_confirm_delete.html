@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Project</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h2>정말로 삭제하시겠습니까?</h2><br><br>
+        <input type="submit" value="삭제하기">
+    </form>
+</body>
+</html>
