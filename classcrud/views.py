@@ -9,6 +9,8 @@ from .models import ClassBlog
 
 
 class BlogView(ListView):   # HTML Template : Blog Lists -> (소문자모델)_list.html
+    # template_name = 'classcrud/list.html'
+    # context_object_name = 'blog_list'
     model = ClassBlog
 
 class BlogCreate(CreateView):   # HTML Template : Input Form for Create -> (소문자모델)_form.html
