@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Project</title>
+</head>
+<body>
+    <a href="{% url 'new' %}">글쓰기</a>
+    <br>
+
+    {% for blog in object_list %}
+    <h2>{{blog.title}}</h2>
+    <h5>{{blog.created_at}}</h5>
+    <p>{{blog.body}}</p>
+    <a href="{% url 'detail' blog.id %'}">자세히 보기</a><br>
+    <a href="{% url 'update' blog.id %}">수정하기</a><br>
+    <a href="{% url 'del' blog.id %}">삭제</a><br>
+    <hr>
+    {% endfor %}
+</body>
+</html>
