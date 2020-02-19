@@ -8,7 +8,10 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView # Manag
 from .models import ClassBlog
 
 
-class BlogCrate(CreateView):
+class BlogView(ListView):
+    model = ClassBlog
+
+class BlogCreate(CreateView):
     model = ClassBlog
     fields = ['title', 'body']
     success_url = reverse_lazy('list')
